@@ -196,11 +196,11 @@ function getResultsHTML()
 	{
 		result += "\n";
 		result += scale[i];
-		result += ",";
+		result += ":";
 
 
 		result += results_rating[i];
-		result += ",";
+		// result += ",";
 
 		// result += results_tally[i];
 		// result += ",";
@@ -211,9 +211,9 @@ function getResultsHTML()
 	}
 
 	result += "\n";
-	result += "総合スコア,";
+	result += "総合スコア:";
 	result += results_overall;
-	result += ",";
+	// result += ",";
 
 	return result;
 }
