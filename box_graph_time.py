@@ -11,7 +11,8 @@ def format_func(value, tick_number):
     return milliseconds_to_time(value)
 
 
-data = pd.read_table('retrieval_time_clock.tsv', sep='\t')
+data = pd.read_table('./data/retrieval_time_graph.tsv', sep='\t')
+# data = pd.read_table('./data/ui_time_graph.tsv', sep='\t')
 
 fig, ax = plt.subplots()
 boxplot = ax.boxplot([data['Proposed System'], data['Compared System']], 
@@ -33,8 +34,8 @@ for mean in boxplot['means']:
 
 ax = plt.gca()
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(format_func))
-# ax.set_title('Object Searching Time on UI', size=18)
-ax.set_title('Object Retrieval Time', size=18)
+# ax.set_title('Object searching time on the UI', size=18)
+ax.set_title('Object retrieval time', size=18)
 ax.set_ylabel('Time', size=14)
 ax.set_xticklabels(labels=['Proposed System', 'Compared System'], fontsize=14)
 ax.tick_params(axis='y', labelsize=12) 

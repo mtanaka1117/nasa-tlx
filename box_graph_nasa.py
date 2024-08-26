@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 scales = ['Mental Demand', 'Physical Demand', 'Temporal Demand', 'Performance', 'Effort', 'Frustration']
 
-data = pd.read_table('nasa.tsv', sep='\t')
+data = pd.read_table('./data/nasa.tsv', sep='\t')
 
 data_proposed = []
 data_compared = []
@@ -45,7 +45,7 @@ for patch, color, median, flier, in zip(boxplot['boxes'], colors * len(scales), 
     
 
 ax = plt.gca()
-ax.set_title('The Results of NASA-TLX')
+ax.set_title('Results of NASA-TLX')
 ax.set_ylabel('Score')
 
 xticks = [i * 2 + offset / 2 for i in range(len(scales))]
